@@ -1,0 +1,36 @@
+# Application
+spring:
+  resources:
+    add-mappings: true
+  application:
+    name: interstellar-backend-challenge
+  main:
+    banner-mode: 'off'
+  mvc:
+    favicon:
+      enabled: false
+    throw-exception-if-no-handler-found: true
+  jackson:
+    default-property-inclusion: non_absent
+
+management:
+  endpoints:
+    enabled-by-default: false
+    web:
+      base-path: /management
+      exposure:
+        include:
+          - info
+          - health
+          - metrics
+  endpoint:
+    info:
+      enabled: true
+    health:
+      enabled: true
+      show-details: always
+    metrics:
+      enabled: true
+  health:
+    diskspace:
+      threshold: 512MB

@@ -30,3 +30,6 @@ gradle clean test
     - /features returns an array. this is not compliant to best practice
 - as loading the json is lazy it will slow down the first request, worsening p99 performance metrics. Fair enough for
  an assessment, for production we are interested in a different setup
+ 
+ This setup contains a github actions pipeline, pull request and contribution template. On a production service I'd
+  add a openapi description as well.

@@ -36,3 +36,6 @@ Follow the link below for more information and instructions on how to configure 
 More:
 
 * https://kotlinlang.org/docs/reference/coding-conventions.html
+
+# API Standards
+- https://opensource.zalando.com/restful-api-guidelines/

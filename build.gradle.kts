@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 object Versions {
 	const val JACKSON = "2.10.2"
 	const val ARROW_KT = "0.10.3"
+	const val MOCKITO_KOTLIN = "2.2.0"
 }
 
 plugins {
@@ -35,6 +36,8 @@ dependencies {
 	}
 	implementation(group = "com.fasterxml.jackson.core", name = "jackson-databind", version = Versions.JACKSON)
 	implementation(group = "com.fasterxml.jackson.module", name = "jackson-module-kotlin", version = Versions.JACKSON)
+
+	testImplementation(group = "com.nhaarman.mockitokotlin2", name = "mockito-kotlin", version = Versions.MOCKITO_KOTLIN)
 }
 
 tasks.withType<Test> {

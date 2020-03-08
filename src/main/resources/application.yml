@@ -12,6 +12,8 @@ spring:
     throw-exception-if-no-handler-found: true
   jackson:
     default-property-inclusion: non_absent
+    serialization:
+      write-dates-as-timestamps: true
 
 management:
   endpoints:

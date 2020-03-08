@@ -15,14 +15,15 @@ class StaticFeatureCollectionRepository(
         private val path: String = "features/source-data.json"
 ) : FeatureCollectionRepository {
 
-    private val featureCollection by lazy {
+    private val features by lazy {
         readFromFile(path, object : TypeReference<List<FeatureCollection>>() {})
+                .flatMap { it.features }
+                .associateBy { it.properties.id }
     }
 
-    override fun getFeatures(): List<Feature> = featureCollection.flatMap(FeatureCollection::features)
+    override fun getFeatures(): List<Feature> = features.values.toList()
 
-    override fun getFeature(id: UUID): Feature? = featureCollection.flatMap(FeatureCollection::features)
-            .firstOrNull { it.properties.id == id }
+    override fun getFeature(id: UUID): Feature? = features[id]
 
     companion object {
 

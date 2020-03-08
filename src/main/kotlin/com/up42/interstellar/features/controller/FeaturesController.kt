@@ -1,6 +1,7 @@
 package com.up42.interstellar.features.controller
 
 import com.up42.interstellar.features.repository.FeatureCollectionRepository
+import org.springframework.http.MediaType
 import java.util.UUID
 import org.springframework.http.ResponseEntity
 import org.springframework.util.Base64Utils
@@ -39,7 +40,7 @@ class FeaturesController(
                         ResponseEntity.ok(it)
                     } ?: ResponseEntity.notFound().build()
 
-    @GetMapping("/{id}/quicklook", produces = ["image/png"])
+    @GetMapping("/{id}/quicklook", produces = [MediaType.IMAGE_PNG_VALUE])
     fun getFeatureQuicklook(
             @PathVariable("id") id: UUID
     ): ResponseEntity<ByteArray> =

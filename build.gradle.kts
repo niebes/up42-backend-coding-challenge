@@ -1,13 +1,12 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 object Versions {
-	const val JACKSON = "2.10.2"
-	const val ARROW_KT = "0.10.3"
+	const val JACKSON = "2.11.1"
 	const val MOCKITO_KOTLIN = "2.2.0"
 }
 
 plugins {
-	id("org.springframework.boot") version "2.2.5.RELEASE"
+	id("org.springframework.boot") version "2.3.1.RELEASE"
 	id("io.spring.dependency-management") version "1.0.9.RELEASE"
 	kotlin("jvm") version "1.3.70"
 	kotlin("plugin.spring") version "1.3.70"
